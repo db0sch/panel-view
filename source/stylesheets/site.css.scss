@@ -1,0 +1,83 @@
+body {
+  margin: 0px;
+}
+
+.interface {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+#lists {
+  flex: 0 0 280px;
+  ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+#notes {
+  flex: 1 0 50%;
+  background-color: #bfcde0;
+  .notes-scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 45px);
+  }
+  ol {
+    margin: 5px;
+    padding: 5px;
+    list-style: none;
+  }
+}
+
+#content {
+  flex: 0 0 0px;
+  background-color: #5d5d81;
+  &:target {
+    flex: 0 0 280px;
+    transition: all .5s ease-in-out;
+  }
+  &:not(:target) {
+    flex: 0 0 0px;
+    transition: all .5s ease-in-out;
+  }
+}
+
+nav {
+  height: 45px;
+  background-color: #000505;
+}
+
+li.sidebar-item {
+  a {
+    color: black;
+    height: 38px;
+    padding: 0 8px 0 8px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    outline: 0;
+    transition: background-color 100ms ease;
+    &:focus, &:active, &:target {
+      background-color: #bfcde0;
+    }
+  }
+}
+
+li.notes-item {
+  height: 47px;
+  margin-bottom: 1px;
+  a.notes-item-body {
+    background-color: white;
+    outline: 0;
+    color: black;
+    border-radius: 3px;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px 0 10px;
+  }
+}
